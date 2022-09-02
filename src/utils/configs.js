@@ -1,0 +1,1 @@
+export const URL_DONNEES = 'https://api-developers.spinalcom.com/api/v1/geographicContext/space';

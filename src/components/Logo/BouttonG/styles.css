@@ -1,0 +1,16 @@
+.mainContainer {
+    display: 'flex';
+}
+
+.logo {
+    color: black;
+}
+
+.Border {
+    border: 1px solid gray;
+    border-radius: 5px 5px;
+}
+
+.setG {
+    margin-right: 30px;
+}

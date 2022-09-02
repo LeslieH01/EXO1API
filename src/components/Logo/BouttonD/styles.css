@@ -1,0 +1,14 @@
+.btnD {}
+
+.set {
+    width: 50px;
+    padding: 2px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.set-logo {
+    width: 10px;
+    height: 10px;
+    margin-left: -20px;
+}
