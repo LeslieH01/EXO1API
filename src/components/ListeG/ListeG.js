@@ -18,6 +18,7 @@ import { isLabelWithInternallyDisabledControl } from '@testing-library/user-even
 
 import { getItems } from '../../utils/functions';
 import { URL_DONNEES } from '../../utils/configs';
+import axios from 'axios';
 
 
 function createData(name, calories, fat, carbs, protein, price) {
@@ -134,15 +135,21 @@ const rows = [
 
 const ListeG = () => {
 
-    const [state, setState] = useState({});
-
+    const [data, setData] = useState();
     useEffect(() => {
-        setState(getItems(URL_DONNEES));
-        console.log("Nos donnee", state);
-    }, [state]);
-
+        const fetchData = async () => {
+          const result = await axios(
+            URL_DONNEES,
+          );
+     
+          setData(result.data);
+        };
+     
+        fetchData();
+      }, []);
+    console.log("Hello we have data!!",data)
     return (
-        <TableContainer component={Paper}>
+        data?<TableContainer component={Paper}>
             <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>
@@ -161,6 +168,7 @@ const ListeG = () => {
                 </TableBody>
             </Table>
         </TableContainer>
+      :<p>It's loading ...</p>
     );
 }
 export default ListeG;
